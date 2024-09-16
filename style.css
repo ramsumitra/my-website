@@ -1,0 +1,150 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ff3333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.hero {
+    background-color: #e6e6e6;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: #ff3333;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #333;
+}
+
+/* Address Section */
+.address {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.address h2 {
+    color: #ff3333;
+    font-size: 24px;
+}
+
+/* Plans Section */
+.plans {
+    padding: 20px;
+    text-align: center;
+}
+
+.plans h2 {
+    font-size: 28px;
+    color: #ff3333;
+}
+
+.plan-card {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card h3 {
+    font-size: 24px;
+    color: #ff3333;
+}
+
+.plan-card p {
+    font-size: 18px;
+}
+
+button {
+    background-color: #ff3333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Diwali Offer Banner */
+.offer-banner {
+    background-color: #ffe6e6;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.offer-banner h2 {
+    color: #ff3333;
+    font-size: 24px;
+}
+
+/* FTTH Section */
+.ftth {
+    padding: 20px;
+    text-align: center;
+}
+
+.ftth h2, .ftth h3 {
+    color: #ff3333;
+}
+
+/* Footer */
+footer {
+    background-color: #ff3333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .plan-card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+}
