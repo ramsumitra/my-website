@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketan & Poly Internet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #c0392b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .plans {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .offer {
+            background-color: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        /* Prize Wheel Styles */
+        .prize-wheel {
+            text-align: center;
+            margin-top: 40px;
+        }
+        #wheel {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            background-image: conic-gradient(
+                #e74c3c 0deg 60deg, #f1c40f 60deg 120deg, #2ecc71 120deg 180deg,
+                #3498db 180deg 240deg, #9b59b6 240deg 300deg, #1abc9c 300deg 360deg
+            );
+            position: relative;
+            margin: 0 auto;
+            transition: transform 4s ease-out;
+        }
+        .wheel-pointer {
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 40px solid #e74c3c;
+            position: absolute;
+            top: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #spin-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #spin-button:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        /* Mobile Styles */
+        @media screen and (max-width: 600px) {
+            header {
+                padding: 15px;
+                font-size: 18px;
+            }
+            .plans {
+                margin: 10px;
+                padding: 15px;
+            }
+            table, th, td {
+                font-size: 14px;
+            }
+            .offer {
+                font-size: 14px;
+            }
+            footer {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .prize-wheel {
+                margin-top: 20px;
+            }
+            #wheel {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ketan & Poly Internet</h1>
+    <p>High-Speed Fiber Broadband Plans</p>
+</header>
+
+<section class="plans">
+    <!-- Broadband Plans Table as above -->
+</section>
+
+<section class="prize-wheel">
+    <h2>Spin the Prize Wheel!</h2>
+    <div id="wheel">
+        <div class="wheel-pointer"></div>
+    </div>
+    <button id="spin-button" onclick="spinWheel()">Spin Now!</button>
+    <p id="result"></p>
+</section>
+
+<footer>
+    <p>Ketan & Poly Internet<br>Bldg No. 2, Shop No. 8, Tilak Nagar, Chembur, Mumbai - 400089</p>
+    <p>Contact us at: ketanpolyinternet@gmail.com | Call: 022 25273737</p>
+</footer>
+
+<script>
+    const prizes = ["100 Mbps for 1 Month", "50 Mbps for 1 Month", "400 Mbps for 3 Months", "Free Router", "200 Mbps for 6 Months", "50 Mbps for 3 Months"];
+    let spinAngle = 0;
+
+    // Check if the user has already played
+    if (localStorage.getItem('hasPlayed')) {
+        document.getElementById('spin-button').disabled = true;
+        document.getElementById('result').textContent = "You have already played!";
+    }
+
+    function spinWheel() {
+        if (localStorage.getItem('hasPlayed')) return;
+
+        spinAngle = Math.floor(Math.random() * 360) + 720; // random spin between 720deg and 1080deg
+        document.getElementById('wheel').style.transform = `rotate(${spinAngle}deg)`;
+        
+        // Disable the button once the wheel is spun
+        document.getElementById('spin-button').disabled = true;
+        setTimeout(() => {
+            const prizeIndex = Math.floor((spinAngle % 360) / 60); // divide the wheel into 6 sections
+            const selectedPrize = prizes[prizeIndex];
+            document.getElementById('result').textContent = `Congratulations! You won: ${selectedPrize}`;
+            
+            // Store in localStorage so the user can only play once
+            localStorage.setItem('hasPlayed', true);
+
+            // You can also send this data via WhatsApp or email (backend integration needed)
+        }, 4000); // Show result after 4 seconds (time for spin animation)
+    }
+</script>
+
+</body>
+</html>

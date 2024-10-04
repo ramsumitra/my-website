@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketan & Poly Internet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #c0392b;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .plans {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .offer {
+            background-color: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        /* Booking Form */
+        form {
+            margin-top: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        /* Scratch and Win Styles */
+        .scratch-win {
+            text-align: center;
+            margin-top: 40px;
+        }
+        #scratch-button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        #scratch-button:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /* Mobile Styles */
+        @media screen and (max-width: 600px) {
+            header {
+                padding: 15px;
+                font-size: 18px;
+            }
+            .plans {
+                margin: 10px;
+                padding: 15px;
+            }
+            table, th, td {
+                font-size: 14px;
+            }
+            .offer {
+                font-size: 14px;
+            }
+            footer {
+                font-size: 14px;
+                padding: 8px;
+            }
+            .scratch-win {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ketan & Poly Internet</h1>
+    <p>High-Speed Fiber Broadband Plans</p>
+</header>
+
+<section class="plans">
+    <h2>Broadband Plans</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Plan Speed</th>
+                <th>30 Days</th>
+                <th>6+1 Month (210 Days)</th>
+                <th>12+3 Month (450 Days)</th>
+                <th>18+6 Month (720 Days)</th>
+                <th>24 Months Avg Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>40 Mbps</td>
+                <td>₹400</td>
+                <td>₹2400</td>
+                <td>₹4800</td>
+                <td>₹7200</td>
+                <td>₹300</td>
+            </tr>
+            <tr>
+                <td>50 Mbps</td>
+                <td>₹500</td>
+                <td>₹3000</td>
+                <td>₹6000</td>
+                <td>₹9000</td>
+                <td>₹375</td>
+            </tr>
+            <tr>
+                <td>100 Mbps</td>
+                <td>₹650</td>
+                <td>₹3900</td>
+                <td>₹7800</td>
+                <td>₹11700</td>
+                <td>₹488</td>
+            </tr>
+            <tr>
+                <td>150 Mbps</td>
+                <td>₹850</td>
+                <td>₹5100</td>
+                <td>₹10200</td>
+                <td>₹15300</td>
+                <td>₹638</td>
+            </tr>
+            <tr>
+                <td>200 Mbps</td>
+                <td>₹1050</td>
+                <td>₹6300</td>
+                <td>₹12600</td>
+                <td>₹18900</td>
+                <td>₹788</td>
+            </tr>
+            <tr>
+                <td>300 Mbps</td>
+                <td>₹1200</td>
+                <td>₹7200</td>
+                <td>₹14400</td>
+                <td>₹21600</td>
+                <td>₹900</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="offer">
+        <p>Special Diwali Offer: Pay for 6, 12, or 18 months and get extra months free!</p>
+    </div>
+
+    <!-- Booking form for each plan -->
+    <h3>Book Now</h3>
+    <form action="mailto:ketanpolyinternet@gmail.com" method="post" enctype="text/plain">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="contact">Contact Number:</label>
+        <input type="text" id="contact" name="contact" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+
+        <label for="plan">Selected Plan:</label>
+        <input type="text" id="plan" name="plan" value="Plan of your choice (e.g., 40 Mbps)" required>
+
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+<section class="scratch-win">
+    <h2>Scratch and Win!</h2>
+    <button id="scratch-button" onclick="scratch()">Scratch Now!</button>
+    <p id="result"></p>
+</section>
+
+<footer>
+    <p>Ketan & Poly Internet<br>Bldg No. 2, Shop No. 8, Tilak Nagar, Chembur, Mumbai - 400089</p>
+    <p>Contact us at: ketanpolyinternet@gmail.com | Call: 022 25273737</p>
+</footer>
+
+<script>
+    let hasPlayed = false;
+
+    function scratch() {
+        if (hasPlayed) {
+            document.getElementById("result").innerText = "Sorry, you've already played.";
+            return;
+        }
+
+        const prizes = ["Free Router", "40 Mbps", "50 Mbps", "Sorry, next time"];
+        const randomPrize = prizes[Math.floor(Math.random() * prizes.length)];
+        document.getElementById("result").innerText = `You won: ${randomPrize}`;
+        hasPlayed = true;
+        document.getElementById("scratch-button").disabled = true;
+    }
+</script>
+
+</body>
+</html>
